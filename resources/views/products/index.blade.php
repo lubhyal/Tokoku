@@ -19,7 +19,7 @@
           </div>
         </div>
 
-        <div class="filtergender card">
+        <!-- <div class="filtergender card">
           <div class="card-body">
             <h5 class="card-title">Gender</h5>
             @foreach ($genders as $genders)
@@ -27,9 +27,9 @@
               <label for="{{ $genders['gender'] }}">{{ $genders['gender'] }}</label><br>
             @endforeach
           </div>
-        </div>
+        </div> -->
 
-        <div class="filterbrand card">
+        <!-- <div class="filterbrand card">
           <div class="card-body">
             <h5 class="card-title">Merek</h5>
             @foreach ($brands as $brands)
@@ -37,12 +37,12 @@
               <label for="{{ $brands['brand'] }}">{{ $brands['brand'] }}</label><br>
             @endforeach
           </div>
-        </div>
+        </div> -->
 
       </div>
     </div>
     <div class="col-lg-9 col-md-9 col-sm-8 col-7 pr-4">
-      <h3>Product</h3>
+      <h3>Produk</h3>
       
       <div class="row d-flex justify-content-start" id="products">
         

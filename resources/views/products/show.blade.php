@@ -14,7 +14,7 @@
                 <div class="card-body">
                     <div class="show-info">
                         <div class="info-1">
-                            <h6>BUY NEW</h6>
+                            <h6>Beli Sekarang</h6>
                         </div>
                         <div class="info-2">
                             <select id="size-dropdown">
@@ -32,7 +32,7 @@
                         </div>
                         <a href="{{ route('cart.add',['product'=>$product->id]) }}" id="add-to-cart" class="add-to-cart disabled">
                             <div class="info-4">
-                                ADD TO CART
+                                TAMBAHKAN KE KERANJANG
                             </div>
                         </a>
                     </div>
