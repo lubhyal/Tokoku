@@ -9,7 +9,7 @@
         <div class="row ">
 
             <div class="col-12">
-                <label for="name" class=""><?php echo e(__('Nama Barang')); ?></label>
+                <label for="name" class=""><?php echo e(__('Nama Produk')); ?></label>
                 <div class="form-group">
                     <div>
                         <input id="name" type="text" class="form-control <?php $__errorArgs = ['name'];
@@ -100,7 +100,7 @@ unset($__errorArgs, $__bag); ?>
             </div> -->
 
             <div class="col-12">
-                <label for="category" class=""><?php echo e(__('Deskripsi Barang')); ?></label>
+                <label for="category" class=""><?php echo e(__('Deskripsi Produk')); ?></label>
                 <div class="form-group">
                     <div>
                     <input id="desc" type="text" class="form-control <?php $__errorArgs = ['desc'];

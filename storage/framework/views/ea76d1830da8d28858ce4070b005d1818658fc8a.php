@@ -21,11 +21,11 @@
                 <thead>
                   <tr>
                     <th scope="col">ID</th>
-                    <th scope="col">Image</th>
-                    <th scope="col">Name</th>
-                    <th scope="col">Price</th>
-                    <th scope="col">desc</th>
-                    <th scope="col">Action</th>
+                    <th scope="col">Gambar</th>
+                    <th scope="col">Nama Produk</th>
+                    <th scope="col">Harga</th>
+                    <th scope="col">deskripsi</th>
+                    <th scope="col">Aksi</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -34,7 +34,6 @@
                     <th scope="row"><?php echo e($product->id); ?></th>
                     <td><img style="height:100px;" src="<?php echo e(asset('/storage/'.$product->image)); ?>" alt=""></td>
                     <td><?php echo e($product->name); ?></td>
-                    <td><?php echo e($product->brand); ?></td>
                     <td><?php echo e($product->price); ?></td>
                     <td><?php echo e($product->desc); ?></td>
                     <td>

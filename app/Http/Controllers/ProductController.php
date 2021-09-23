@@ -62,7 +62,7 @@ class ProductController extends Controller
                                     <div class="info-1"><img src="'.asset('/storage/'.$product->image).'" alt=""></div>
                                     <div class="info-4"><h5>'.$product->name.'</h5></div>
                                     <div class="info-2"><h4>'.$product->desc.'</h4></div>
-                                    <div class="info-3"><h5>RM '.$product->price.'</h5></div>
+                                    <div class="info-3"><h5>Rp. '.$product->price.'</h5></div>
                                     </div>
                                 </div>
                             </a>
@@ -110,7 +110,7 @@ class ProductController extends Controller
             'image'=>'required|image',
             'name'=>'required|string',
             'price'=>'required|integer',
-            'desc'=>'required|in:string',
+            'desc'=>'required|string',
         ]);
 
         $imagepath = $request->image->store('products','public');

@@ -11,9 +11,9 @@
         <div class="row ">
 
             <div class="col-12">
-                <label for="name" class="">{{ __('Nama Barang') }}</label>
+                <label for="name" class="">{{ __('Nama Produk') }}</label>
                 <div class="form-group">
-                    <div>
+                    <div>s
                         <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
                         @error('name')
                             <span class="invalid-feedback" role="alert">
@@ -38,43 +38,8 @@
                 </div>
             </div>
 
-            <!-- <div class="col-12">
-                <label for="brand" class="">{{ __('Brand') }}</label>
-                <div class="form-group">
-                    <div>
-                        <select name="brand" id="addproductbrand" class="form-control">
-                            <option selected="true" value="" disabled hidden>Pilih merek Produk</option>
-                            <option value="Nike">Windows</option>
-                            <option value="Adidas">Canva</option>
-                            <option value="New Balance">Adobe</option>
-                            <option value="Asics">Microsoft Office</option>
-                            <option value="Puma">Zoom</option>
-                            <option value="Skechers">Skechers</option>
-                            <option value="Fila">Fila</option>
-                            <option value="Bata">Bata</option>
-                            <option value="Burberry">Burberry</option>
-                            <option value="Converse">Converse</option>
-                        </select>
-                    </div>
-                </div>
-            </div>
-
             <div class="col-12">
-                <label for="gender" class="">{{ __('Gender') }}</label>
-                <div class="form-group">
-                    <div>
-                        <select name="gender" id="addproductgender" class="form-control">
-                            <option selected="true" value="" disabled hidden>Pilih merek Produk</option>
-                            <option value="Male">Male</option>
-                            <option value="Female">Female</option>
-                            <option value="Unisex">Unisex</option>
-                        </select>
-                    </div>
-                </div>
-            </div> -->
-
-            <div class="col-12">
-                <label for="category" class="">{{ __('Deskripsi Barang') }}</label>
+                <label for="category" class="">{{ __('Deskripsi Produk') }}</label>
                 <div class="form-group">
                     <div>
                     <input id="desc" type="text" class="form-control @error('desc') is-invalid @enderror" name="desc" value="{{ old('desc') }}" required autocomplete="desc" autofocus>
