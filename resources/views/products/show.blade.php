@@ -8,27 +8,19 @@
             <img src="{{ asset('/storage/'.$product->image) }}" alt="">
        </div>
        <div class="col-lg-4 col-sm-12 pl-5 pr-5">
-        <h6><strong>{{ $product->brand }}</strong></h6>
-        <h5>{{ $product->name }}</h5>
+        <h6><strong>{{ $product->name }}</strong></h6>
+        <h5>{{ $product->price }}</h5>
             <div class="card">
                 <div class="card-body">
                     <div class="show-info">
                         <div class="info-1">
                             <h6>Beli Sekarang</h6>
                         </div>
-                        <div class="info-2">
-                            <select id="size-dropdown">
-                                <option selected="true" value="nothing" disabled hidden>Choose size</option>
-                                @foreach($sizes as $size)
-                                    @if($size->quantity > 0)
-                                        <option value="{{ $size->name }}">{{ $size->name }}</option>
-                                    @endif
-                                @endforeach
-                            </select>
-                        </div>
+                        
                         <div class="info-3">
                             <p>This product is pre-verified, and will be ready to ship instantly. Expedited shipping options will be available in checkout.
                             </p>
+                            <h6><strong>{{ $product->desc }}</strong></h6>
                         </div>
                         <a href="{{ route('cart.add',['product'=>$product->id]) }}" id="add-to-cart" class="add-to-cart disabled">
                             <div class="info-4">

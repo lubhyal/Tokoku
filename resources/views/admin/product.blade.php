@@ -24,9 +24,8 @@
                     <th scope="col">ID</th>
                     <th scope="col">Image</th>
                     <th scope="col">Name</th>
-                    <th scope="col">Brand</th>
                     <th scope="col">Price</th>
-                    <th scope="col">Category</th>
+                    <th scope="col">desc</th>
                     <th scope="col">Action</th>
                   </tr>
                 </thead>
@@ -38,7 +37,7 @@
                     <td>{{ $product->name }}</td>
                     <td>{{ $product->brand }}</td>
                     <td>{{ $product->price }}</td>
-                    <td>{{ $product->category }}</td>
+                    <td>{{ $product->desc }}</td>
                     <td>
                         <a href="{{ route('product.editform',['id'=>$product->id]) }}" class="btn btn-primary w-100 m-1" style="color:white;">EDIT</a>
                         <a href="{{ route('product.remove',['id'=>$product->id]) }}" class="btn btn-danger w-100 m-1" style="color:white;">HAPUS</a>

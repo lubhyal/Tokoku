@@ -12,7 +12,7 @@
         @method('PATCH')
         <div class="row ">
 
-            <div class="col-12">
+            <!-- <div class="col-12">
                 <label for="size" class="">{{ __('Size') }}</label>
                 <div class="form-group">
                     <div>
@@ -24,7 +24,7 @@
                         @enderror
                     </div>
                 </div>
-            </div>
+            </div> -->
 
             <div class="col-12">
                 <label for="quantity" class="">{{ __('Quantity') }}</label>

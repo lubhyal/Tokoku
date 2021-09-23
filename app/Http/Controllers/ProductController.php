@@ -15,12 +15,10 @@ class ProductController extends Controller
     public function index()
     {
         $products = Product::get();
-        $genders = Product::select('gender')->groupBy('gender')->get();
-        $brands = Product::select('brand')->groupBy('brand')->get();
-        $categories = Product::select('category')->groupBy('category')->get();
+        $desc = Product::select('desc')->groupBy('desc')->get();
         $maxPrice = Product::select('price')->max('price');
         $minPrice = Product::select('price')->min('price');
-        return view('products.index',compact(['brands','genders','categories','maxPrice','minPrice','products']));
+        return view('products.index',compact(['desc','maxPrice','minPrice','products']));
         
     }
 
@@ -31,8 +29,7 @@ class ProductController extends Controller
             $products= Product::where('quantity','>',0);
             $query = json_decode($request->get('query'));
             $price = json_decode($request->get('price'));
-            $gender = json_decode($request->get('gender'));
-            $brand = json_decode($request->get('brand'));
+            $desc = json_decode($request->get('desc'));
             
             if(!empty($query))
             {
@@ -42,13 +39,9 @@ class ProductController extends Controller
             {
                 $products= $products->where('price','<=',$price);
             }
-            if(!empty($gender))
+            if(!empty($desc))
             {
-                $products= $products->whereIn('gender',$gender);
-            }   
-            if(!empty($brand))
-            {
-                $products= $products->whereIn('brand',$brand);
+                $products= $products->whereIn('desc',$desc);
             }
             $products=$products->get();
             
@@ -67,8 +60,8 @@ class ProductController extends Controller
                                     <div class="product-info">
                                     
                                     <div class="info-1"><img src="'.asset('/storage/'.$product->image).'" alt=""></div>
-                                    <div class="info-4"><h5>'.$product->brand.'</h5></div>
-                                    <div class="info-2"><h4>'.$product->name.'</h4></div>
+                                    <div class="info-4"><h5>'.$product->name.'</h5></div>
+                                    <div class="info-2"><h4>'.$product->desc.'</h4></div>
                                     <div class="info-3"><h5>RM '.$product->price.'</h5></div>
                                     </div>
                                 </div>
@@ -103,7 +96,7 @@ class ProductController extends Controller
                             'quantity',
                         ]);
 
-        return view('products.show', compact ('product','sizes'));
+        return view('products.show', compact ('product'));
     }
 
     public function form()
@@ -116,20 +109,16 @@ class ProductController extends Controller
         $this->validate(request(),[
             'image'=>'required|image',
             'name'=>'required|string',
-            'brand'=>'required|in:Nike,Adidas,New Balance,Asics,Puma,Skechers,Fila,Bata,Burberry,Converse',
             'price'=>'required|integer',
-            'gender'=>'required|in:Male,Female,Unisex',
-            'category'=>'required|in:Shoes',
+            'desc'=>'required|in:string',
         ]);
 
         $imagepath = $request->image->store('products','public');
         
         $product = new Product();
         $product->name=request('name');
-        $product->brand=request('brand');
         $product->price=request('price');
-        $product->gender=request('gender');
-        $product->category=request('category');
+        $product->desc=request('desc');
         $product->image=$imagepath;
 
         
@@ -150,10 +139,8 @@ class ProductController extends Controller
         $this->validate(request(),[
             'image'=>'',
             'name'=>'required|string',
-            'brand'=>'required|in:Nike,Adidas,New Balance,Asics,Puma,Skechers,Fila,Bata,Burberry,Converse',
             'price'=>'required|integer',
-            'gender'=>'required|in:Male,Female,Unisex',
-            'category'=>'required|in:Shoes',
+            'desc'=>'required|string',
         ]);
         if(request('image'))
         {
@@ -161,10 +148,8 @@ class ProductController extends Controller
             $product = Product::findOrFail($id);
             
             $product->name=request('name');
-            $product->brand=request('brand');
             $product->price=request('price');
-            $product->gender=request('gender');
-            $product->category=request('category');
+            $product->desc=request('desc');
             $product->image=$imagepath;
             $product->save();
         }
@@ -172,10 +157,8 @@ class ProductController extends Controller
         {
             $product = Product::findOrFail($id);
             $product->name=request('name');
-            $product->brand=request('brand');
             $product->price=request('price');
-            $product->gender=request('gender');
-            $product->category=request('category');
+            $product->desc=request('desc');
             $product->save();
         }
         return redirect()->route('admin.product')->with('success','Successfully edited the product!');
