@@ -10,12 +10,7 @@ class HomeController extends Controller
     public function index()
     {
         $products = Product::take(4)->get();
-        $url = [];
-        foreach($products as $product)
-                {
-                   $url[] = Storage::url($product->image);
-                }
-        return view('home.index',compact(['products','url']));
+        return view('home.index',compact('products'));
         
     }
 }
