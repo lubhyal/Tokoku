@@ -93,7 +93,7 @@
           <a href="{{ route('product.show',['product'=>$product->id]) }}">
             <div class="card-body ">
               <div class="product-info">
-                <div class="info-1"><img src="{{ asset('/storage/'.$product->image) }}" alt=""></div>
+                <div class="info-1"><img src="{{ url('/storage/'.$product->image) }}" alt=""></div>
                 <div class="info-4"><h5>{{ $product->Name }}</h5></div>
                 <div class="info-2"><a href="product/{{ $product->id }}"><h4>{{ $product->desc }}</h4></a></div>
                 <div class="info-3"><h5>Rp. {{ $product->price }}</h5></div>
