@@ -161,16 +161,12 @@
         {
             var search=JSON.stringify(query);
             var price =JSON.stringify($('#pricerange').val());
-            var gender =JSON.stringify(get_filter('gender')); 
-            var brand =JSON.stringify(get_filter('brand'));
             $.ajax({
                 url:"{{ route('product.filter') }}",
                 method:'GET',
                 data:{
                     query:search,
                     price:price,
-                    gender:gender,
-                    brand:brand,
                     },
                 dataType:'json',
                 success:function(data)
@@ -202,12 +198,6 @@
         $(document).on('input','#pricerange',function(){
             var range = $(this).val();
             $('#currentrange').html(range);
-        });
-
-        $(document).on('change','#size-dropdown',function(){
-            var size = $(this).val();
-            document.cookie="shoes_size="+size+";"+"path=/";
-            $('#add-to-cart').removeClass('disabled');
         });
 
     });

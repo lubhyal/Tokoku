@@ -7,7 +7,7 @@
     <div class="container sixtyvh">
     <div class="row ml-2 mr-2">
         <div class="col-12">
-            <h3>PURCHASE HISTORY</h3>
+            <h3>RIWAYAT PENDAFTARAN</h3>
             <hr>
             <div class="row d-flex ">
                 @foreach($orders as $order)
@@ -24,13 +24,13 @@
                                         <h5>{{ $item['item']['name'] }}</h5>
                                     </div>
                                     <div class="detail-2">
-                                        <h6>Size: {{ $item['size'] }}</h6>
+                                        <h6>Deskripsi: {{ $item['desc'] }}</h6>
                                     </div>
                                     <div class="detail-3">
                                         <h6>Quantity: {{ $item['quantity'] }}</h6>
                                     </div>
                                     <div class="detail-4">
-                                        <h6>Price: RM   {{ $item['price'] }}</h6>
+                                        <h6>Price: Rp.   {{ $item['price'] }}</h6>
                                     </div>
                                 </div> 
                             </div>
@@ -48,7 +48,7 @@
                         <div class="col-8">
                             <h6>: {{ $order['id'] }}</h6>
                             <h6>: {{ $order['created_at'] }}</h6>
-                            <h6>: RM {{ $order->cart->totalPrice}}</h6>
+                            <h6>: Rp. {{ $order->cart->totalPrice}}</h6>
                             <h6>: PAsxz1alfg45</h6>
                         </div>
                     </div>

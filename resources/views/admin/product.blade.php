@@ -22,12 +22,11 @@
                 <thead>
                   <tr>
                     <th scope="col">ID</th>
-                    <th scope="col">Image</th>
-                    <th scope="col">Name</th>
-                    <th scope="col">Brand</th>
-                    <th scope="col">Price</th>
-                    <th scope="col">Category</th>
-                    <th scope="col">Action</th>
+                    <th scope="col">Gambar</th>
+                    <th scope="col">Nama Produk</th>
+                    <th scope="col">Harga</th>
+                    <th scope="col">deskripsi</th>
+                    <th scope="col">Aksi</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -36,9 +35,8 @@
                     <th scope="row">{{ $product->id }}</th>
                     <td><img style="height:100px;" src="{{ asset('/storage/'.$product->image) }}" alt=""></td>
                     <td>{{ $product->name }}</td>
-                    <td>{{ $product->brand }}</td>
                     <td>{{ $product->price }}</td>
-                    <td>{{ $product->category }}</td>
+                    <td>{{ $product->desc }}</td>
                     <td>
                         <a href="{{ route('product.editform',['id'=>$product->id]) }}" class="btn btn-primary w-100 m-1" style="color:white;">EDIT</a>
                         <a href="{{ route('product.remove',['id'=>$product->id]) }}" class="btn btn-danger w-100 m-1" style="color:white;">HAPUS</a>
