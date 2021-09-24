@@ -107,7 +107,7 @@ class ProductController extends Controller
     public function create(Request $request)
     {
         $this->validate(request(),[
-            'image'=>'required|image',
+            'image'=>'required|image|mimes:png,jpg,jpeg',
             'name'=>'required|string',
             'price'=>'required|integer',
             'desc'=>'required|string',

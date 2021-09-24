@@ -42,7 +42,7 @@ unset($__errorArgs, $__bag); ?>
                 <label for="price" class=""><?php echo e(__('Harga  Rp.')); ?></label>
                 <div class="form-group">
                     <div>
-                        Rp.<input id="price" type="number" class="form-control <?php $__errorArgs = ['price'];
+                        <input id="price" type="number" class="form-control <?php $__errorArgs = ['price'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
 if (isset($message)) { $__messageOriginal = $message; }
