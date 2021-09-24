@@ -1,3 +1,5 @@
+
+
 <?php $__env->startSection('content'); ?>
 
 <div class="col-12 col-md-12 col-sm-12 col-lg-10">
@@ -29,7 +31,7 @@
             <table class="table table-striped">
                 <thead>
                   <tr>
-                    <th scope="col">Size</th>
+                    <!-- <th scope="col">Size</th> -->
                     <th scope="col">Quantity</th>
                     <th scope="col">Action</th>
                   </tr>

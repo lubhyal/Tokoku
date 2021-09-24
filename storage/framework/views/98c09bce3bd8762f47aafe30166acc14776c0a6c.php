@@ -1,3 +1,5 @@
+
+
 <?php $__env->startSection('content'); ?>
 
 <div class="col-12 col-md-12 col-sm-12 col-lg-10">
@@ -10,7 +12,7 @@
         <div class="row ">
 
             <div class="col-12">
-                <label for="name" class=""><?php echo e(__('Name')); ?></label>
+                <label for="name" class=""><?php echo e(__('Nama')); ?></label>
                 <div class="form-group">
                     <div>
                         <input id="name" type="text" class="form-control <?php $__errorArgs = ['name'];
@@ -38,7 +40,7 @@ unset($__errorArgs, $__bag); ?>
             </div>
 
             <div class="col-12">
-                <label for="price" class=""><?php echo e(__('Price')); ?></label>
+                <label for="price" class=""><?php echo e(__('Harga')); ?></label>
                 <div class="form-group">
                     <div>
                         <input id="price" type="text" class="form-control <?php $__errorArgs = ['price'];
@@ -64,7 +66,7 @@ unset($__errorArgs, $__bag); ?>
                     </div>
                 </div>
             </div>
-
+<!-- 
             <div class="col-12">
                 <label for="brand" class=""><?php echo e(__('Brand')); ?></label>
                 <div class="form-group">
@@ -98,15 +100,32 @@ unset($__errorArgs, $__bag); ?>
                         </select>
                     </div>
                 </div>
-            </div>
+            </div> -->
 
             <div class="col-12">
-                <label for="category" class=""><?php echo e(__('Category')); ?></label>
+                <label for="category" class=""><?php echo e(__('Deskripsi Produk')); ?></label>
                 <div class="form-group">
                     <div>
-                        <select name="category" id="addproductcategory" class="form-control">
-                            <option value="Shoes">Shoes</option>
-                        </select>
+                    <input id="desc" type="text" class="form-control <?php $__errorArgs = ['desc'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?> is-invalid <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>" name="desc" value="<?php echo e(old('desc') ?? $product->desc); ?>" required autocomplete="desc" autofocus>
+                        <?php $__errorArgs = ['desc'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?>
+                            <span class="invalid-feedback" role="alert">
+                                <strong><?php echo e($message); ?></strong>
+                            </span>
+                        <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>
                     </div>
                 </div>
             </div>

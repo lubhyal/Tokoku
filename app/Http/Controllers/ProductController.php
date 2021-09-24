@@ -76,7 +76,7 @@ class ProductController extends Controller
             {
                 $output='
                 <div class="col-lg-4 col-md-6 col-sm-6 pt-3">
-                    <h4>No Data Found</h4>
+                    <h4>Data tidak ditemukan</h4>
                 </div>
                 ';
             }
@@ -125,7 +125,7 @@ class ProductController extends Controller
 
         $product->save();
         // DB:: table('products')->insert($product);
-        return redirect()->route('admin.product')->with('success','Successfully added the product!');
+        return redirect()->route('admin.product')->with('success','Berhasil Menambahkan produk');
     }
     
     public function editform($id)
@@ -161,7 +161,7 @@ class ProductController extends Controller
             $product->desc=request('desc');
             $product->save();
         }
-        return redirect()->route('admin.product')->with('success','Successfully edited the product!');
+        return redirect()->route('admin.product')->with('success','Berhasil Mengedit produk!');
         
     }
     
@@ -170,7 +170,7 @@ class ProductController extends Controller
         Product::where('id',$id)->delete();
         Stock::where('product_id',$id)->delete();
 
-        return redirect()->route('admin.product')->with('success','Successfully removed the product!');
+        return redirect()->route('admin.product')->with('success','Berhasil menghapus produk!');
     }
 
     public function list()
