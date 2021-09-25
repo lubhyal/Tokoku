@@ -8,6 +8,7 @@ use App\Stock;
 use App\Cart;
 use Illuminate\Http\Request;
 use DB;
+
 use Session;
 
 class ProductController extends Controller

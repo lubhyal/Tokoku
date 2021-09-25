@@ -18,8 +18,6 @@
             <p class="p-0 m-0">Maks: Rp. <span id="currentrange">{{ $maxPrice }}</span></p>
           </div>
         </div>
-
-
       </div>
     </div>
     <div class="col-lg-9 col-md-9 col-sm-8 col-7 pr-4">
