@@ -18,11 +18,10 @@
                         </div>
                         
                         <div class="info-3">
-                            <p>This product is pre-verified, and will be ready to ship instantly. Expedited shipping options will be available in checkout.
+                            <p>{{ $product->desc }}
                             </p>
-                            <h6><strong>{{ $product->desc }}</strong></h6>
                         </div>
-                        <a href="{{ route('cart.add',['product'=>$product->id]) }}" id="add-to-cart" class="add-to-cart disabled">
+                        <a href="{{ route('cart.add',['product'=>$product->id]) }}" id="add-to-cart" class="add-to-cart ">
                             <div class="info-4">
                                 TAMBAHKAN KE KERANJANG
                             </div>
