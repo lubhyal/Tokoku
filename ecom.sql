@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 24, 2021 at 09:39 AM
+-- Generation Time: Sep 26, 2021 at 08:43 PM
 -- Server version: 10.4.20-MariaDB
 -- PHP Version: 7.3.29
 
@@ -138,8 +138,11 @@ CREATE TABLE `products` (
 --
 
 INSERT INTO `products` (`id`, `name`, `price`, `image`, `desc`, `quantity`, `created_at`, `updated_at`) VALUES
-(21, 'kod', 3000, 'products/f0F3zdYLP30OVRyIgQbcw1yKxpvMjF1znbI9jXgz.png', 'ada', 1, '2021-09-23 01:35:25', '2021-09-23 23:37:47'),
-(22, 'INTERNET DOWNLOAD MANAGER', 4000, 'products/u6bZmNkRQSH2shh3sYHNUcL9vT0NYgIA8vxf62bp.png', 'Internet Download', 1, '2021-09-23 01:43:21', '2021-09-23 01:43:21');
+(30, 'visio professional 2019', 100000, 'products/S1xXMnGwHD9tSR6TKklYpXqDxb3LyBLCNKxaunSM.jpg', 'visio professional 2019', 1, '2021-09-24 01:29:41', '2021-09-26 11:06:12'),
+(32, 'Avast Premium', 250000, 'products/5c7AwKC27swyKk9KOD7GDGiT9EzjLAEOTEZEiFPb.jpg', 'Avast Premium', 1, '2021-09-24 01:53:36', '2021-09-26 11:06:27'),
+(33, 'Internet Download Manager', 200000, 'products/LrosiGdrGOqdcr31PAcBNDevJlykZz7M4yptCjZA.jpg', 'Internet Download Manager', 1, '2021-09-24 01:54:17', '2021-09-26 11:07:09'),
+(34, 'Zoom', 20000, 'products/iEgUlPkhFHSJZKXRzOyL5P1CzgujSLx1cD8v9HJK.jpg', 'Zoom', 1, '2021-09-24 01:56:10', '2021-09-26 11:07:32'),
+(35, 'Antivirus', 100000, 'products/Nt89aITZhPcLHTsrQ8YT9oEvy8qpllWh0X6alGTI.jpg', 'Antivirus', 1, '2021-09-24 01:57:49', '2021-09-26 11:08:26');
 
 -- --------------------------------------------------------
 
@@ -168,7 +171,8 @@ INSERT INTO `profiles` (`id`, `user_id`, `phonenumber`, `country`, `city`, `addr
 (2, 2, 8215551234, 'Indonesia', 'Medan', 'Danau Toba', 27321, NULL, NULL),
 (3, 3, 42912345, 'United State of America', 'Seattle', 'Downtown Seattle ST 17', 78231, NULL, NULL),
 (4, 4, 32912345, 'China', 'Guangzhou', 'ST 23a', 78213, NULL, NULL),
-(5, 5, NULL, NULL, NULL, NULL, NULL, '2021-09-20 03:03:25', '2021-09-20 03:03:25');
+(5, 5, NULL, NULL, NULL, NULL, NULL, '2021-09-20 03:03:25', '2021-09-20 03:03:25'),
+(6, 6, NULL, NULL, NULL, NULL, NULL, '2021-09-26 11:12:31', '2021-09-26 11:12:31');
 
 -- --------------------------------------------------------
 
@@ -237,7 +241,8 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `role`, `remember_token`, `created_at`, `updated_at`) VALUES
 (1, 'Admin', 'admin@tokoku.com', NULL, '$2y$10$eUZiy2RFuiJZemNAuF/xauJwe1.NSOCERgl99gFVYBk1rugGrQVj2', 'Admin', NULL, NULL, NULL),
-(5, 'coba', 'coba@gmail.com', NULL, '$2y$10$YOXAzIUigB0Ucvyq0Z74feCpIuD3YkuSyKdtYTBPvoBv2VfTpgjo2', 'Customer', NULL, '2021-09-20 03:03:25', '2021-09-20 03:03:25');
+(5, 'coba', 'coba@gmail.com', NULL, '$2y$10$YOXAzIUigB0Ucvyq0Z74feCpIuD3YkuSyKdtYTBPvoBv2VfTpgjo2', 'Customer', NULL, '2021-09-20 03:03:25', '2021-09-20 03:03:25'),
+(6, 'sholeh', 'msholehsanjaya78@gmail.com', NULL, '$2y$10$9jKZVAD6jhiq8ligOfo2OeOXnrqba/bSBg3SXP7wNls0gGVQFSP96', 'Customer', NULL, '2021-09-26 11:12:31', '2021-09-26 11:12:31');
 
 --
 -- Indexes for dumped tables
@@ -325,7 +330,7 @@ ALTER TABLE `migrations`
 --
 -- AUTO_INCREMENT for table `newsletters`
 --
-ALTER TABLE `newsletters` 
+ALTER TABLE `newsletters`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
@@ -338,13 +343,13 @@ ALTER TABLE `orders`
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
 
 --
 -- AUTO_INCREMENT for table `profiles`
 --
 ALTER TABLE `profiles`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `reminders`
@@ -362,7 +367,7 @@ ALTER TABLE `stocks`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
