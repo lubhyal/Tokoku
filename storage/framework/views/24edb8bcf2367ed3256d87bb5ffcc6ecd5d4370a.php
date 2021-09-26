@@ -1,3 +1,5 @@
+
+
 <?php $__env->startSection('content'); ?>
 
     <?php if(Session::has('cart') && $totalQuantity >0): ?>
@@ -18,7 +20,7 @@
                                 </div>
                                 <div class="item-detail mr-auto d-flex flex-column justify-content-center">
                                     <div class="info-2"><h5><?php echo e($product['item']['name']); ?></h5> </div> 
-                                    <div class="info-3"><h6>Size: <?php echo e($product['size']); ?></h6></div>
+                                    <!-- <div class="info-3"><h6>Size: <?php echo e($product['size']); ?></h6></div> -->
                                     <div class="info-4"><h6>Quantity: <?php echo e($product['quantity']); ?></h6></div>
                                     <div class="info-5">
                                         <a href="<?php echo e(route('cart.remove',['id'=>key($products)])); ?>" class="remove-cart">
@@ -66,7 +68,7 @@
             <div class="col-12 d-flex flex-column justify-content-center align-items-center empty-cart">
                 <div><i class="fa fa-shopping-cart" aria-hidden="true"></i></div>
                 <div><h4><b>Keranjang anda Kosong.</b></h4></div>
-                <div><a href="<?php echo e(route('product.index')); ?>">Go get some shoes first :)</a></div>
+                <div><a href="<?php echo e(route('product.index')); ?>">Go get some first :)</a></div>
             </div>
         </div>
     </div>

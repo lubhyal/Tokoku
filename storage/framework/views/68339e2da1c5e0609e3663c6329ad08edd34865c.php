@@ -94,7 +94,7 @@
           <a href="<?php echo e(route('product.show',['product'=>$product->id])); ?>">
             <div class="card-body ">
               <div class="product-info">
-                <div class="info-1"><img src="<?php echo e(asset('/storage/'.$product->image)); ?>" alt=""></div>
+                <div class="info-1"><img src="<?php echo e(url('/storage/'.$product->image)); ?>" alt=""></div>
                 <div class="info-4"><h5><?php echo e($product->Name); ?></h5></div>
                 <div class="info-2"><a href="product/<?php echo e($product->id); ?>"><h4><?php echo e($product->desc); ?></h4></a></div>
                 <div class="info-3"><h5>Rp. <?php echo e($product->price); ?></h5></div>

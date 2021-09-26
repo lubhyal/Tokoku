@@ -34,7 +34,7 @@
                 <?php $__currentLoopData = $products; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $product): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                   <tr>
                     <th scope="row"><?php echo e($product->id); ?></th>
-                    <td><img style="height:100px;" src="<?php echo e(asset('/storage/'.$product->image)); ?>" alt=""></td>
+                    <td><img style="height:100px;" src="<?php echo e(url('/storage/'.$product->image)); ?>" alt=""></td>
                     <td><?php echo e($product->name); ?></td>
                     <td><?php echo e($product->price); ?></td>
                     <td><?php echo e($product->desc); ?></td>
