@@ -19,7 +19,7 @@
             <h5>DAFTAR STOK</h5>
         </div>
         <div class="card-body">
-            <a href="{{ route('admin.addstockform') }}" class="btn btn-success mb-2" style="color:white; width:150px;">ADD SIZE</a>
+            <a href="{{ route('admin.addstockform') }}" class="btn btn-success mb-2" style="color:white; width:150px;">Tambah Stok</a>
             <select name="product-list" id="product-list" class="w-100 p-2 mb-2">
                 <option selected="true" value="" disabled hidden>Pilih produk</option>
                 @foreach ($product_id as $id)
@@ -31,7 +31,7 @@
                 <thead>
                   <tr>
                     <!-- <th scope="col">Size</th> -->
-                    <th scope="col">Quantity</th>
+                    <th scope="col">Jumlah</th>
                     <th scope="col">Action</th>
                   </tr>
                 </thead>

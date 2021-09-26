@@ -20,6 +20,7 @@
                         <div class="info-3">
                             <p>{{ $product->desc }}
                             </p>
+                            
                         </div>
                         <a href="{{ route('cart.add',['product'=>$product->id]) }}" id="add-to-cart" class="add-to-cart ">
                             <div class="info-4">

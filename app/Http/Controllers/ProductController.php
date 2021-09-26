@@ -59,11 +59,10 @@ class ProductController extends Controller
                             <a href="product/'.$product->id.'">
                                 <div class="card-body ">
                                     <div class="product-info">
-                                    
-                                    <div class="info-1"><img src="'.asset('/storage/'.$product->image).'" alt=""></div>
-                                    <div class="info-4"><h5>'.$product->name.'</h5></div>
+                                    <div class="info-1"><img src="'.asset('/storage/'.$product->image).'" alt="Gambar Produk"></div>
+                                    <div class="info-4"><h4>'.$product->name.'</h4></div>
                                     <div class="info-2"><h4>'.$product->desc.'</h4></div>
-                                    <div class="info-3"><h5>Rp. '.$product->price.'</h5></div>
+                                    <div class="info-3"><h4>Rp. '.$product->price.'</h4></div>
                                     </div>
                                 </div>
                             </a>
@@ -77,7 +76,7 @@ class ProductController extends Controller
             {
                 $output='
                 <div class="col-lg-4 col-md-6 col-sm-6 pt-3">
-                    <h4>Data tidak ditemukan</h4>
+                    <h4>Produk Kosong</h4>
                 </div>
                 ';
             }
@@ -93,7 +92,6 @@ class ProductController extends Controller
     {   
         $sizes = Stock::where('product_id','=',$product->id)
                      ->get([
-                            'name',
                             'quantity',
                         ]);
 

@@ -23,22 +23,8 @@
                 </div>
             </div>
 
-            <!-- <div class="col-12">
-                <label for="size" class="">{{ __('Size') }}</label>
-                <div class="form-group">
-                    <div>
-                        <input id="size" type="text" class="form-control @error('size') is-invalid @enderror" name="size" value="{{ old('size') }}" required autocomplete="size" autofocus>
-                        @error('size')
-                            <span class="invalid-feedback" role="alert">
-                                <strong>{{ $message }}</strong>
-                            </span>
-                        @enderror
-                    </div>
-                </div>
-            </div> -->
-
             <div class="col-12">
-                <label for="quantity" class="">{{ __('Quantity') }}</label>
+                <label for="quantity" class="">{{ __('Jumlah') }}</label>
                 <div class="form-group">
                     <div>
                         <input id="quantity" type="text" class="form-control @error('quantity') is-invalid @enderror" name="quantity" value="{{ old('quantity')}}" required autocomplete="quantity" autofocus>

@@ -23,9 +23,6 @@
                                     <div class="detail-1">
                                         <h5>{{ $item['item']['name'] }}</h5>
                                     </div>
-                                    <div class="detail-2">
-                                        <h6>Deskripsi: {{ $item['desc'] }}</h6>
-                                    </div>
                                     <div class="detail-3">
                                         <h6>Quantity: {{ $item['quantity'] }}</h6>
                                     </div>

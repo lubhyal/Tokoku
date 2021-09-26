@@ -12,20 +12,20 @@
                 <hr>
                 <div class="row">
                     <div class="col-5">
-                        Order ID<br>
-                        Payment ID <br>
-                        Buyer ID<br>
-                        Buyer Name <br>
-                        Phone Number <br>
+                        ID Pemesanan<br>
+                        ID Pembayaran<br>
+                        ID Pembeli<br>
+                        Nama Pembeli <br>
+                        Email Pembeli <br>
                         Status
         
                     </div>
                     <div class="col-7">
                         : {{ $id->id }} <br>
-                        : {{ $id->payment_id }} <br>
+                        : PAsxz1alfg45 <br>
                         : {{ $id->user_id }} <br>
                         : {{ $id->name }} <br>
-                        : {{ $id->phonenumber }} <br>
+                        : {{ $id->email }} <br>
                         : PAID
                     </div>
                 </div>
@@ -34,22 +34,17 @@
             
 
             <div class="col-12 col-lg-6 col-md-6 col-sm-12 pt-2">
-                <h5>ALAMAT PEMGIRIMAN</h5>
+                <h5>DETAIL PENGIRIMAN</h5>
                 <hr>
                 <div class="row">
                     <div class="col-5">
-                        Country <br>
-                        City <br>
-                        Zipcode <br>
-                        Address <br>
+                        Email <br>
+                        Nomor Telepon <br>
                         
                     </div>
                     <div class="col-7">
-                        : {{ $id->country }} <br>
-                        : {{ $id->city }} <br>
-                        : {{ $id->zipcode }} <br>
-                        : {{ $id->address }} <br>
-                        
+                        : {{ $id->email }} <br>
+                        : {{ $id->phonenumber }} <br>
                     </div>
                 </div>
             </div>
@@ -70,14 +65,11 @@
                                 <div class="detail-1">
                                     <h5>{{ $item['item']['name'] }}</h5>
                                 </div>
-                                <!-- <div class="detail-2">
-                                    <h6>Size: {{ $item['size'] }}</h6>
-                                </div> -->
                                 <div class="detail-3">
-                                    <h6>Quantity: {{ $item['quantity'] }}</h6>
+                                    <h6>Jumlah: {{ $item['quantity'] }}</h6>
                                 </div>
                                 <div class="detail-4">
-                                    <h6>Price: RM   {{ $item['price'] }}</h6>
+                                    <h6>Harga: Rp.   {{ $item['price'] }}</h6>
                                 </div>
                             </div> 
                         </div>

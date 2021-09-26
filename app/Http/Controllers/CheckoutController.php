@@ -29,10 +29,7 @@ class CheckoutController extends Controller
         $this->validate(request(), [
             'name' => 'required|string',
             'phonenumber' => 'required|regex:/^([0-9\s\-\+\(\)]*)$/|min:8',
-            'country' => 'required|string',
-            'city' => 'required|string',
-            'address' => 'required',
-            'zipcode' => 'required|digits:5',
+            'email' => 'required',
             'creditcardnumber' => 'required|digits:16',
             'expiremonth' => 'required|digits:2',
             'expireyear' => 'required|digits:2',
@@ -47,19 +44,16 @@ class CheckoutController extends Controller
 
         foreach ($cart->items as $order) {
             Stock::where('product_id',$order['product_id'])
-                    ->where('name',$order['size'])
+                    ->where('name')
                     ->decrement('quantity');
         }
         
 
         $order = new Order();
         $order->cart = serialize($cart); 
-        $order->address = $request->input('address');
         $order->name = $request->input('name');
         $order->phonenumber = $request->input('phonenumber');
-        $order->city = $request->input('city');
-        $order->country = $request->input('country');
-        $order->zipcode = $request->input('zipcode');
+        $order->email = $request->input('email');
         
         Auth::user()->orders()->save($order);
 

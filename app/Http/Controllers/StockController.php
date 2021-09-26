@@ -11,7 +11,6 @@ class StockController extends Controller
     public function index()
     {
         $product_id=Product::all();
-        //dd($product_id);
         return view('admin.stock',compact('product_id'));
     }
 
@@ -22,7 +21,7 @@ class StockController extends Controller
             $id = json_decode($request->get('id'));
             $stock = Stock:: where('product_id',$id);
            
-            $stock=$stock->orderBy('name', 'ASC')->get();
+            $stock=$stock->orderBy('id', 'ASC')->get();
             
 
             $total_row = $stock->count();
@@ -33,10 +32,6 @@ class StockController extends Controller
                 {
                     $output .='
                     <tr >
-
-                    <th scope="row">
-                        '.$stock->name.'
-                    </th>
                     <td>
                         '.$stock->quantity.'
                     </td>
@@ -54,7 +49,7 @@ class StockController extends Controller
             {
                 $output='
                 <div class="col-lg-4 col-md-6 col-sm-6 pt-3">
-                    <h4>No Size Found</h4>
+                    <h4>No Stock Found</h4>
                 </div>
                 ';
             }
@@ -75,13 +70,11 @@ class StockController extends Controller
     public function addstock()
     {
         $this->validate(request(),[
-            'size'=>'required|string',
             'quantity'=>'required|integer',
         ]);
 
         $stock = new Stock();
         $stock->product_id=request('product');
-        $stock->name=request('size');
         $stock->quantity=request('quantity');
         $stock->save();
 
@@ -97,12 +90,10 @@ class StockController extends Controller
     public function editstock(Request $request, $id)
     {
         $this->validate(request(),[
-            'size'=>'required|string',
             'quantity'=>'required|integer',
         ]);
 
         $stock=Stock::findOrFail($id);
-        $stock->name=request('size');
         $stock->quantity=request('quantity');
         $stock->save();
         

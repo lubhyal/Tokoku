@@ -19,7 +19,7 @@
           <div class="col-4 promo-info h-100">
             <div class="infowrapper d-flex flex-column h-100 justify-content-center">
               <h2>DAPATKAN LISENSI DARI RUMAH</h2>
-              <h4>30% Semua Produk!</h4>
+              <h4>Potongan 30% Semua Produk!</h4>
               <p>Promo Berakhir pada  23 Desember 2021</p>
               <a href="{{ route('product.index') }}" class="w-100 button">Belanja Sekarang</a>
             </div>   
@@ -93,10 +93,10 @@
           <a href="{{ route('product.show',['product'=>$product->id]) }}">
             <div class="card-body ">
               <div class="product-info">
-                <div class="info-1"><img src="{{ url('/storage/'.$product->image) }}" alt=""></div>
-                <div class="info-4"><h5>{{ $product->Name }}</h5></div>
+                <div class="info-1"><img src="{{ url('/storage/'.$product->image) }}" alt="Foto Produk"></div>
+                <div class="info-4"><h4>{{ $product->name }}</h4></div>
                 <div class="info-2"><a href="product/{{ $product->id }}"><h4>{{ $product->desc }}</h4></a></div>
-                <div class="info-3"><h5>Rp. {{ $product->price }}</h5></div>
+                <div class="info-3"><h5>Rp. {$format_uang{{ $product->price }}}</h5></div>
               </div>
             </div>
           </a>
