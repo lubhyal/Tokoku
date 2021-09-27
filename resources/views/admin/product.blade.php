@@ -35,7 +35,7 @@
                     <th scope="row">{{ $product->id }}</th>
                     <td><img style="height:100px;" src="{{ url('/storage/'.$product->image) }}" alt=""></td>
                     <td>{{ $product->name }}</td>
-                    <td>{{ $product->price }}</td>
+                    <td>Rp.{{ format_uang($product->price) }}</td>
                     <td>{{ $product->desc }}</td>
                     <td>
                         <a href="{{ route('product.editform',['id'=>$product->id]) }}" class="btn btn-primary w-100 m-1" style="color:white;">EDIT</a>
