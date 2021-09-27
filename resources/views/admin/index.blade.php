@@ -40,7 +40,7 @@
                 </div>
                 <div class="card-body">
                     
-                    <h5>Rp {{ $totalgross }}</h5>
+                    <h5>Rp {{ format_uang($totalgross) }}</h5>
                 </div>
             </div>
         </div>

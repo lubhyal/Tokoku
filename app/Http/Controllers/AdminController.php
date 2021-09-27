@@ -26,7 +26,7 @@ class AdminController extends Controller
         {
             $reminder=new Reminder();
             $reminder->id = 1;
-            $reminder->reminder="Type something";
+            $reminder->reminder="Tulis sesuatu...";
             $reminder->save();
             $reminder = Reminder::find(1);
         }
@@ -82,6 +82,6 @@ class AdminController extends Controller
         $reminder->reminder = request('reminder');
         $reminder->save();
 
-        return redirect()->route('admin.index')->with('success','Successfully updated the reminder!');
+        return redirect()->route('admin.index')->with('success','Berhasil memperbarui pengingat.');
     }
 }

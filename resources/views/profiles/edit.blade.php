@@ -9,7 +9,7 @@
         <div class="row">
             
             <div class="col-8 mx-auto">
-                <h3 class="offset-md-5">Edit Profile</h3>
+                <h3 class="offset-md-5">Edit Profil</h3>
                 <hr>
                 <div class="form-group row">
                     <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Name:') }}</label>

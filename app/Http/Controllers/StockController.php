@@ -37,7 +37,7 @@ class StockController extends Controller
                     </td>
                     <td>
                           <a href="/admin-stock/edit/'.$stock->id.'" class="btn btn-primary  m-1" style="color:white; width:100px;">EDIT</a>
-                          <a href="/admin-stock/remove/'.$stock->id.'" class="btn btn-danger  m-1" style="color:white; width:100px;">REMOVE</a>
+                          <a href="/admin-stock/remove/'.$stock->id.'" class="btn btn-danger  m-1" style="color:white; width:100px;">HAPUS</a>
                     </td>
 
                     </tr>
@@ -49,7 +49,7 @@ class StockController extends Controller
             {
                 $output='
                 <div class="col-lg-4 col-md-6 col-sm-6 pt-3">
-                    <h4>No Stock Found</h4>
+                    <h4>Tidak ada stok</h4>
                 </div>
                 ';
             }
@@ -78,7 +78,7 @@ class StockController extends Controller
         $stock->quantity=request('quantity');
         $stock->save();
 
-        return redirect()->route('admin.stock')->with('success','Successfully added the product!');
+        return redirect()->route('admin.stock')->with('success','Berhasil menambahkan stok produk!');
     }
 
     public function editform($id)
@@ -97,14 +97,14 @@ class StockController extends Controller
         $stock->quantity=request('quantity');
         $stock->save();
         
-        return redirect()->route('admin.stock')->with('success','Successfully edited the product!');
+        return redirect()->route('admin.stock')->with('success','Berhasil mengedit stok produk');
     }
 
     public function remove($id)
     {
         Stock::where('id','=',$id)->delete();
 
-        return redirect()->route('admin.stock')->with('success','Successfully removed the product!');
+        return redirect()->route('admin.stock')->with('success','Berhasil menghapus stok produk!');
     }
 
 

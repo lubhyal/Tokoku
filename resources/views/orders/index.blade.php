@@ -27,7 +27,7 @@
                                         <h6>Quantity: {{ $item['quantity'] }}</h6>
                                     </div>
                                     <div class="detail-4">
-                                        <h6>Price: Rp.   {{ $item['price'] }}</h6>
+                                        <h6>Price: Rp.   {{ format_uang($item['price']) }}</h6>
                                     </div>
                                 </div> 
                             </div>
@@ -45,7 +45,7 @@
                         <div class="col-8">
                             <h6>: {{ $order['id'] }}</h6>
                             <h6>: {{ $order['created_at'] }}</h6>
-                            <h6>: Rp. {{ $order->cart->totalPrice}}</h6>
+                            <h6>: Rp. {{ format_uang($order->cart->totalPrice)}}</h6>
                             <h6>: PAsxz1alfg45</h6>
                         </div>
                     </div>

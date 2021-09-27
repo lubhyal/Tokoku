@@ -67,10 +67,10 @@
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                    <a href="{{ route('profile.edit',['user'=>Auth::user()->id ]) }}" class="dropdown-item">Edit Profile</a>
+                                    <a href="{{ route('profile.edit',['user'=>Auth::user()->id ]) }}" class="dropdown-item">Edit Profil</a>
                                     
                                     @if(Auth::user()->role == 'Customer')
-                                    <a href="{{ route('order.show',['user'=>Auth::user()->id]) }}" class="dropdown-item">Purchase History</a>
+                                    <a href="{{ route('order.show',['user'=>Auth::user()->id]) }}" class="dropdown-item">Riwayat Pembayaran</a>
                                     @endif
                                     
                                     <a class="dropdown-item" href="{{ route('logout') }}"
@@ -103,14 +103,14 @@
                 <div class='row'>
                     <div class='col-md-4 col-sm-12 pt-3'>
                         <h3>Kontak Kami</h3>
-                        <p>Aldona Angelica Syafira <br> Banyuwangi <br> +628542445833 <br> customercare@tokoku.com</p>
+                        <p>Layanan Pelanggan <br> Banyuwangi <br> +62-854-2445-8337 <br> customercare@tokoku.com</p>
                     </div>
                     <div class='col-md-4 col-sm-12 pt-3'>
                         <h3>Follow kami</h3>
                         <ul>
-                            <li><a href='https://facebook.com/' target='_blank'>
-                                <i class="fa fa-instagram"></i></a></li>
                             <li><a href='https://instagram.com/' target='_blank'>
+                                <i class="fa fa-instagram"></i></a></li>
+                            <li><a href='https://facebook.com/' target='_blank'>
                                 <i class="fa fa-facebook"></i></a>
                             </li>
                         </ul>
@@ -123,7 +123,7 @@
                             <form action='{{ route('newsletter.add') }}' method='post' id='newsletter-validate-detail'>
                                 @csrf
                                 <input type='email' name='email' id='newsletter-footer' class=''
-                                    placeholder='Enter your email'>
+                                    placeholder='Masukkan email anda'>
                                 <button type='submit' id='signup-newsletter-footer' class='button'>DAFTAR</button>
                             </form>
                         </div>

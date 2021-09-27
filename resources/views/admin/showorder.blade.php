@@ -69,7 +69,7 @@
                                     <h6>Jumlah: {{ $item['quantity'] }}</h6>
                                 </div>
                                 <div class="detail-4">
-                                    <h6>Harga: Rp.   {{ $item['price'] }}</h6>
+                                    <h6>Harga: Rp.   {{ format_uang($item['price']) }}</h6>
                                 </div>
                             </div> 
                         </div>

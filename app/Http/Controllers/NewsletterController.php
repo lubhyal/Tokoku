@@ -11,6 +11,6 @@ class NewsletterController extends Controller
         $subscribe = new Newsletter();
         $subscribe->email=request('email');
         $subscribe->save();
-        return redirect()->route('home.index')->with('success','Successfully subscribed to the newsletter!');
+        return redirect()->route('home.index')->with('success','Berhasil berlangganan berita!');
     }
 }

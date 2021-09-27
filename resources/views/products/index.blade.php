@@ -9,13 +9,13 @@
       <div class="fixedfilter">
 
         <h3><i class="fa fa-filter"></i> Filter </h3>
-        <input class="mt-3" type="text" id="search" placeholder="Enter product name" style="width:100%;">
+        <input class="mt-3" type="text" id="search" placeholder="Cari nama produk" style="width:100%;">
 
         <div class="filterprice card">
           <div class="card-body">
-            <h5 class="card-title">HARGA</h5>
+            <h5 class="card-title">Harga</h5>
             <input type="range" min="{{ $minPrice }}" max="{{ $maxPrice }}" value="{{ $maxPrice }}" class="slider selector" id="pricerange">
-            <p class="p-0 m-0">Maks: Rp. <span id="currentrange">{{ $maxPrice }}</span></p>
+            <p class="p-0 m-0">Maks: Rp. <span id="currentrange">{{ format_uang($maxPrice) }}</span></p>
           </div>
         </div>
       </div>

@@ -44,20 +44,19 @@ class CheckoutController extends Controller
 
         foreach ($cart->items as $order) {
             Stock::where('product_id',$order['product_id'])
-                    ->where('name')
                     ->decrement('quantity');
         }
         
 
         $order = new Order();
         $order->cart = serialize($cart); 
+        $order->email = $request->input('email');
         $order->name = $request->input('name');
         $order->phonenumber = $request->input('phonenumber');
-        $order->email = $request->input('email');
         
         Auth::user()->orders()->save($order);
 
         Session::forget('cart');
-        return redirect()->route('home.index')->with('success','Successfully purchased the products!');
+        return redirect()->route('home.index')->with('success','Pembelian berhasil, Silahkan cek Email anda.');
     }
 }

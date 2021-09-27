@@ -204,7 +204,7 @@ header .login a {
 }
 
 .product-info .info-1 img{
-    height: 120px;
+    height: 200px;
 }
 
 .product-info .info-2 {
@@ -243,12 +243,12 @@ header .login a {
     color:black;
 }
 
-.card .card-body .product-info .info-2 h4{
+.card .card-body .product-info .info-2  h4{
     font-size: 1rem;
     transition: .2s;
 }
 
-.card .card-body:hover .product-info .info-2 h4{
+.card .card-body:hover .product-info{
     color: var(--hover-color);
 }
 

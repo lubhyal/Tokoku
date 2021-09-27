@@ -8,13 +8,13 @@
             <img src="{{ asset('/storage/'.$product->image) }}" alt="">
        </div>
        <div class="col-lg-4 col-sm-12 pl-5 pr-5">
-        <h6><strong>{{ $product->name }}</strong></h6>
-        <h5>{{ $product->price }}</h5>
+        <h2><strong>{{ $product->name }}</strong></h2>
+        <h5>Rp.{{ format_uang($product->price) }}</h5>
             <div class="card">
                 <div class="card-body">
                     <div class="show-info">
                         <div class="info-1">
-                            <h6>Beli Sekarang</h6>
+                            <h6><strong>Deskripsi :</strong></h6>
                         </div>
                         
                         <div class="info-3">

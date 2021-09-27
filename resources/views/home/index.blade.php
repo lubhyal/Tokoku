@@ -82,9 +82,8 @@
             </a>
           </div>
         </div>
-        <!-- CATEGORY [E]-->
 
-    <!-- FEATURED SHOES [S]-->
+
     <h2 class="pt-4">BESTSELLER</h2>
     <div class="row d-flex justify-content-center">
       @foreach ($products as $product)    
@@ -94,9 +93,9 @@
             <div class="card-body ">
               <div class="product-info">
                 <div class="info-1"><img src="{{ url('/storage/'.$product->image) }}" alt="Foto Produk"></div>
-                <div class="info-4"><h4>{{ $product->name }}</h4></div>
+                <div class="info-4">{{ $product->name }}</div>
                 <div class="info-2"><a href="product/{{ $product->id }}"><h4>{{ $product->desc }}</h4></a></div>
-                <div class="info-3"><h5>Rp. {$format_uang{{ $product->price }}}</h5></div>
+                <div class="info-3"><h5>Rp. {{ format_uang($product->price) }}</h5></div>
               </div>
             </div>
           </a>
