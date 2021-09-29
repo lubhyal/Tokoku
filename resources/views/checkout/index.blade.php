@@ -13,7 +13,7 @@
                 <div class="row ">
                     
                     <div class="col-12">
-                        <h5>SHIPPING DETAILS</h5>
+                        <h5>Pengiriman</h5>
                     </div>
 
                     <div class="col-12">
