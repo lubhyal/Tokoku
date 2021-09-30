@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use app\http\Controllers\EmailController;
 
 /*
 |--------------------------------------------------------------------------
@@ -12,6 +13,7 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/', [EmailController::class,'admin.order']);
 
 Route::get('/', 'HomeController@index')->name('home.index');
 Route::post('/susbcribe', 'NewsletterController@add')->name('newsletter.add');

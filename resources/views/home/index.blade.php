@@ -12,7 +12,7 @@
     </div>
   </div>
   @endif
-  <!-- GET FIT FROM HOME [S]-->
+  
     <div class="row">
       <div class="col-12 promowrap">
         <div class="row m-0 p-0">
@@ -21,7 +21,7 @@
               <h2>DAPATKAN LISENSI DARI RUMAH</h2>
               <h4>Potongan 30% Semua Produk!</h4>
               <p>Promo Berakhir pada  23 Desember 2021</p>
-              <a href="{{ route('product.index') }}" class="w-100 button">Belanja Sekarang</a>
+              <a href="{{ route('product.index') }}" class="w-100 button">PRODUK KAMI</a>
             </div>   
           </div> 
         </div>
