@@ -62,7 +62,7 @@ class ProductController extends Controller
                                     <div class="info-1"><img src="'.asset('/storage/'.$product->image).'" alt="Gambar Produk"></div>
                                     <div class="info-4"><h3>'.$product->name.'</h3></div>
                                     <div class="info-2"><h4>'.$product->desc.'</h4></div>
-                                    <div class="info-3"><h4>Rp. '.format_uang($product->price).'</h4></div>
+                                    <div class="info-3"><h5>Rp. '.format_uang($product->price).'</h4></div>
                                     </div>
                                 </div>
                             </a>

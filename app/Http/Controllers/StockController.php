@@ -33,6 +33,9 @@ class StockController extends Controller
                     $output .='
                     <tr >
                     <td>
+                        '.$stock->productkey.'
+                    </td>
+                    <td>
                         '.$stock->quantity.'
                     </td>
                     <td>
@@ -70,11 +73,13 @@ class StockController extends Controller
     public function addstock()
     {
         $this->validate(request(),[
+            'productkey'=>'required',
             'quantity'=>'required|integer',
         ]);
 
         $stock = new Stock();
         $stock->product_id=request('product');
+        $stock->productkey=request('productkey');
         $stock->quantity=request('quantity');
         $stock->save();
 
@@ -90,10 +95,12 @@ class StockController extends Controller
     public function editstock(Request $request, $id)
     {
         $this->validate(request(),[
+            'productkey'=>'required',
             'quantity'=>'required|integer',
         ]);
 
         $stock=Stock::findOrFail($id);
+        $stock->productkey=request('productkey');
         $stock->quantity=request('quantity');
         $stock->save();
         

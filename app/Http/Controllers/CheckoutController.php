@@ -45,6 +45,7 @@ class CheckoutController extends Controller
         foreach ($cart->items as $order) {
             Stock::where('product_id',$order['product_id'])
                     ->decrement('quantity');
+                    
         }
         
 

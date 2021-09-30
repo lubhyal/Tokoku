@@ -24,10 +24,23 @@
             </div>
 
             <div class="col-12">
+                <label for="productkey" class="">{{ __('Key Produk') }}</label>
+                <div class="form-group">
+                    <div>
+                        <input id="productkey" type="text" class="form-control @error('productkey') is-invalid @enderror" name="productkey" value="{{ old('productkey')}}" required autocomplete="productkey" autofocus>
+                        @error('productkey')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror
+                    </div>
+                </div>
+            </div>
+            <div class="col-12">
                 <label for="quantity" class="">{{ __('Jumlah') }}</label>
                 <div class="form-group">
                     <div>
-                        <input id="quantity" type="text" class="form-control @error('quantity') is-invalid @enderror" name="quantity" value="{{ old('quantity')}}" required autocomplete="quantity" autofocus>
+                        <input id="quantity" type="number" class="form-control @error('quantity') is-invalid @enderror" name="quantity" value="{{ old('quantity')}}" required autocomplete="quantity" autofocus>
                         @error('quantity')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>
