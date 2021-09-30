@@ -28,62 +28,7 @@
         <img class="d-block w-100" src="{{ asset('photo/banner.jpeg') }}" alt="">
       </div>
     </div>
-    <!-- GET FIT FROM HOME [E]-->
-
-    <!-- MEN & WOMEN [S]-->
-    <div class="row pt-4">
-      <div class="col-6 d-flex flex-column align-items-center genderwrapper">
-        <a href="{{ route('product.index') }}">
-          <button id="maleBtn">
-          <div class="gender">
-            <img class="d-block w-100" src="{{ asset('photo/win11.jpg') }}" alt="">
-            <h2 class="pt-2">Windows</h2>
-          </div>
-        </button>
-        </a>
-      </div>
-      <div class="col-6 d-flex flex-column align-items-center genderwrapper">
-        <a href="{{ route('product.index') }}">
-          <button id="femaleBtn">
-          <div class="gender">
-            <img class="d-block w-100" src="{{ asset('photo/defender.png') }}" alt="">
-            <h2 class="pt-2">Aplikasi</h2>
-          </div>
-        </button>
-        </a>
-      </div>
-    </div>
-  
-
-        <!-- CATEGORY [S]-->
-        <div class="row m-0 pt-4">
-          <div class="col-lg-4 col-sm-12 d-flex flex-column align-items-center categorywrapper">
-            <a href="{{ route('product.index') }}">
-              <div class="category">
-                <img class="" height="200px" src="{{ asset('photo/office.png') }}" alt="">
-                <h5 class="pt-2">MICROSOFT OFFICE</h5>
-              </div>
-            </a>
-          </div>
-          <div class="col-lg-4 col-sm-12 d-flex flex-column align-items-center categorywrapper">
-            <a href="#">
-              <div class="category">
-                <img class="" height="200px" src="{{ asset('photo/adobe.png') }}" alt="">
-                <h5 class="pt-2">ADOBE SOFTWARE</h5>
-            </div>
-            </a>
-          </div>
-          <div class="col-lg-4 col-sm-12 d-flex flex-column align-items-center categorywrapper">
-            <a href="#">
-              <div class="category">
-                <img class="" height="200px" src="{{ asset('photo/antivirus.png') }}" alt="">
-                <h5 class="pt-2">ANTIVIRUS</h5>
-              </div>
-            </a>
-          </div>
-        </div>
-
-
+    
     <h2 class="pt-4">BESTSELLER</h2>
     <div class="row d-flex justify-content-center">
       @foreach ($products as $product)    
