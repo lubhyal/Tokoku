@@ -7,9 +7,6 @@
         <div class="card-header">
             <h5>DAFTAR ORDERAN</h5>
         </div>
-        @if(Session::has('status'))
-                    <div class="alert alert-success">{{ Session::get('status') }}</div>
-                @endif
         <div class="card-body">
             <ul class="list-group">
                 @foreach ($orders as $order)
