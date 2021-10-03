@@ -82,18 +82,18 @@ class AdminController extends Controller
         $mail = new PHPMailer(true);
  
         try {
-            $mail->SMTPDebug = 0; // Enable verbose debug output
+            $mail->SMTPDebug = 0; 
             $mail->isSMTP();
             $mail->Host       = 'smtp.googlemail.com';   
             $mail->SMTPAuth   = true;
-            $mail->Username   = 'tokokugan@gmail.com'; // silahkan ganti dengan alamat email Anda
-            $mail->Password   = 'admintokoku1A'; // silahkan ganti dengan password email Anda
+            $mail->Username   = 'tokokugan@gmail.com'; 
+            $mail->Password   = 'admintokoku1A'; 
             $mail->SMTPSecure = 'ssl';
             $mail->Port       = 465;
 
-            $mail->setFrom('tokokugan@gmail.com', 'tokoku'); // silahkan ganti dengan alamat email Anda
+            $mail->setFrom('tokokugan@gmail.com', 'TOKOKU.com'); 
             $mail->addAddress($to);
-            $mail->addReplyTo('tokokugan@gmail.com', 'tokoku gan'); // silahkan ganti dengan alamat email Anda
+            $mail->addReplyTo('tokokugan@gmail.com', 'TOKOKU.com'); 
             // Content
             $mail->isHTML(true);
             $mail->Subject = $subject;
@@ -101,10 +101,10 @@ class AdminController extends Controller
 
             $mail->send();
             $request->session()->flash('status', 'Email berhasil dikirim!');
-            return view('admin.order');
+            return redirect()->route('admin.order');
         } catch (Exception $e) {
             $request->session()->flash('status', "Gagal kirim email");
-            return view('admin.order');
+            return redirect()->route('admin.order');
         }
     }
 

@@ -31,7 +31,6 @@
                 <thead>
                   <tr>
                     <th scope="col">Produk key</th>
-                    <th scope="col">Jumlah</th>
                     <th scope="col">Action</th>
                   </tr>
                 </thead>

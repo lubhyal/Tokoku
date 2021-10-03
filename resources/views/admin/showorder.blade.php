@@ -28,13 +28,15 @@
                         : {{ $id->email }} <br>
                         : PAID
                     </div>
-                </div>
-                
+                </div> 
             </div>
             
 
             <div class="col-12 col-lg-6 col-md-6 col-sm-12 pt-2">
                 <h5>PENGIRIMAN</h5>
+                @if(Session::has('status'))
+                    <div class="alert alert-success">{{ Session::get('status') }}</div>
+                @endif
                 <hr>
                 <form action="{{ url('order/{id}') }}" method="post">
                     @method('POST') 
@@ -50,8 +52,8 @@
                     <div class="form-group">
                         <label for="message">Isi Pesan </label>
                         <textarea class="form-control" name="message" id="" cols="30" rows="4"> Hai {{ $id->name }}, Terima Kasih Telah berbelanja di TOKOKU.com,
-Mohon simpan dengan baik Produk key berikut ini.
-@foreach($order as $order)
+    Mohon simpan dengan baik Produk key berikut ini.
+    @foreach($order as $order)
             <div class="col-sm-12 col-md-12 col-lg-12 d-flex order-history mx-auto">
                 <div class="row">
                     @foreach ($order->cart->items as $item)
@@ -59,16 +61,16 @@ Mohon simpan dengan baik Produk key berikut ini.
                             <div class="order-image">
                                 <img src="{{ asset('/storage/'.$item['item']['image']) }}" alt="">
                             </div>
-
+    
                             <div class="order-detail mr-auto d-flex flex-column justify-content-center">
                                 <div class="detail-1">
-                                    <h5>{{ $item['item']['name'] }}</h5>
+                                    <h4>{{ $item['item']['name'] }}</h4>
                                 </div>
                                 <div class="detail-3">
-                                    <h6>Jumlah: {{ $item['quantity'] }}</h6>
+                                    <h4>Jumlah: {{ $item['quantity'] }}</h4>
                                 </div>
                                 <div class="detail-4">
-                                    <h6>Harga: Rp.   {{ format_uang($item['price']) }}</h6>
+                                    <h4>Harga: Rp.   {{ format_uang($item['price']) }}</h4>
                                 </div>
                             </div> 
                         </div>
@@ -76,12 +78,18 @@ Mohon simpan dengan baik Produk key berikut ini.
                 </div>                      
             </div>
             @endforeach
-</textarea>
+    
+            
+           <h6> Copyright © 2021 TOKOKU.COM, All rights reserved. Anda menerima email ini karena terdaftar sebagai akun aktif di TOKOKU.COM atau telah daftar melalui website TOKOKU.COM.
+    <br><br>
+    Disclaimer: Semua konten dibuat untuk tujuan informasional dan bukan merupakan rekomendasi untuk membeli/menjual lisensi tertentu. Always do your own research.
+           </h6>
+    </textarea>
                     </div>
                     <div class="form-group">
                         <button type="submit" class="btn btn-success col-sm-5"><i class="fa fa-send"></i>&nbsp;KIRIM EMAIL</button>
                     </div>
-                <form>
+                <form>   
                 </div>
             </div>
            @endforeach

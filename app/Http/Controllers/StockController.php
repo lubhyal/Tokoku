@@ -30,21 +30,17 @@ class StockController extends Controller
                 $output ='';
                 foreach($stock as $stock)
                 {
-                    $output .='
+                    $output .=' 
                     <tr >
                     <td>
                         '.$stock->productkey.'
                     </td>
                     <td>
-                        '.$stock->quantity.'
-                    </td>
-                    <td>
                           <a href="/admin-stock/edit/'.$stock->id.'" class="btn btn-primary  m-1" style="color:white; width:100px;">EDIT</a>
                           <a href="/admin-stock/remove/'.$stock->id.'" class="btn btn-danger  m-1" style="color:white; width:100px;">HAPUS</a>
                     </td>
-
                     </tr>
-              
+                   
                     ';
                 }
             }
@@ -74,13 +70,11 @@ class StockController extends Controller
     {
         $this->validate(request(),[
             'productkey'=>'required',
-            'quantity'=>'required|integer',
         ]);
 
         $stock = new Stock();
         $stock->product_id=request('product');
         $stock->productkey=request('productkey');
-        $stock->quantity=request('quantity');
         $stock->save();
 
         return redirect()->route('admin.stock')->with('success','Berhasil menambahkan stok produk!');
@@ -96,12 +90,10 @@ class StockController extends Controller
     {
         $this->validate(request(),[
             'productkey'=>'required',
-            'quantity'=>'required|integer',
         ]);
 
         $stock=Stock::findOrFail($id);
         $stock->productkey=request('productkey');
-        $stock->quantity=request('quantity');
         $stock->save();
         
         return redirect()->route('admin.stock')->with('success','Berhasil mengedit stok produk');
