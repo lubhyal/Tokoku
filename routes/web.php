@@ -23,6 +23,7 @@ Route::patch('/dashboard', 'AdminController@updatereminder')->name('admin.remind
 
 Route::get('/order', 'AdminController@order')->name('admin.order')->middleware(['auth','admin']);
 Route::get('/order/{id}', 'AdminController@show_order')->name('admin.showorder')->middleware(['auth','admin']);
+Route::post('/order/{id}', 'AdminController@sendEmail')->name('admin.showorder')->middleware(['auth','admin']);
 
 Route::get('/user', 'AdminController@user')->name('admin.user')->middleware(['auth','admin']);
 

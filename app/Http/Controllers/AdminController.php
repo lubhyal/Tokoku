@@ -7,6 +7,9 @@ use App\Profile;
 use App\Reminder;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\SMTP;
+use PHPMailer\PHPMailer\Exception;
 
 class AdminController extends Controller
 {
@@ -68,6 +71,41 @@ class AdminController extends Controller
             return $order;
         });
         return view('admin.showorder',compact('order','ids'));
+    }
+
+    public function sendEmail(Request $request)
+    {
+        $to         = $request->get('to');
+        $subject    = $request->get('subject');
+        $message    = $request->get('message');
+ 
+        $mail = new PHPMailer(true);
+ 
+        try {
+            $mail->SMTPDebug = 0; // Enable verbose debug output
+            $mail->isSMTP();
+            $mail->Host       = 'smtp.googlemail.com';   
+            $mail->SMTPAuth   = true;
+            $mail->Username   = 'tokokugan@gmail.com'; // silahkan ganti dengan alamat email Anda
+            $mail->Password   = 'admintokoku1A'; // silahkan ganti dengan password email Anda
+            $mail->SMTPSecure = 'ssl';
+            $mail->Port       = 465;
+
+            $mail->setFrom('tokokugan@gmail.com', 'tokoku'); // silahkan ganti dengan alamat email Anda
+            $mail->addAddress($to);
+            $mail->addReplyTo('tokokugan@gmail.com', 'tokoku gan'); // silahkan ganti dengan alamat email Anda
+            // Content
+            $mail->isHTML(true);
+            $mail->Subject = $subject;
+            $mail->Body    = $message;
+
+            $mail->send();
+            $request->session()->flash('status', 'Email berhasil dikirim!');
+            return view('admin.order');
+        } catch (Exception $e) {
+            $request->session()->flash('status', "Gagal kirim email");
+            return view('admin.order');
+        }
     }
 
     public function user()

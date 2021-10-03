@@ -102,6 +102,7 @@ class ComposerStaticInitceb1253358c9ac706807f3177dd509fd
             'Prophecy\\' => 9,
             'PhpParser\\' => 10,
             'PhpOption\\' => 10,
+            'PHPMailer\\PHPMailer\\' => 20,
         ),
         'O' => 
         array (
@@ -350,6 +351,10 @@ class ComposerStaticInitceb1253358c9ac706807f3177dd509fd
         array (
             0 => __DIR__ . '/..' . '/phpoption/phpoption/src/PhpOption',
         ),
+        'PHPMailer\\PHPMailer\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/phpmailer/phpmailer/src',
+        ),
         'Opis\\Closure\\' => 
         array (
             0 => __DIR__ . '/..' . '/opis/closure/src',
@@ -511,6 +516,7 @@ class ComposerStaticInitceb1253358c9ac706807f3177dd509fd
         'App\\Http\\Middleware\\TrimStrings' => __DIR__ . '/../..' . '/app/Http/Middleware/TrimStrings.php',
         'App\\Http\\Middleware\\TrustProxies' => __DIR__ . '/../..' . '/app/Http/Middleware/TrustProxies.php',
         'App\\Http\\Middleware\\VerifyCsrfToken' => __DIR__ . '/../..' . '/app/Http/Middleware/VerifyCsrfToken.php',
+        'App\\Mail\\kirimEmail' => __DIR__ . '/../..' . '/app/Mail/kirimEmail.php',
         'App\\Newsletter' => __DIR__ . '/../..' . '/app/Newsletter.php',
         'App\\Order' => __DIR__ . '/../..' . '/app/Order.php',
         'App\\Policies\\ProfilePolicy' => __DIR__ . '/../..' . '/app/Policies/ProfilePolicy.php',
@@ -1261,6 +1267,7 @@ class ComposerStaticInitceb1253358c9ac706807f3177dd509fd
         'Faker\\Provider\\nl_BE\\Payment' => __DIR__ . '/..' . '/fzaninotto/faker/src/Faker/Provider/nl_BE/Payment.php',
         'Faker\\Provider\\nl_BE\\Person' => __DIR__ . '/..' . '/fzaninotto/faker/src/Faker/Provider/nl_BE/Person.php',
         'Faker\\Provider\\nl_BE\\PhoneNumber' => __DIR__ . '/..' . '/fzaninotto/faker/src/Faker/Provider/nl_BE/PhoneNumber.php',
+        'Faker\\Provider\\nl_BE\\Text' => __DIR__ . '/..' . '/fzaninotto/faker/src/Faker/Provider/nl_BE/Text.php',
         'Faker\\Provider\\nl_NL\\Address' => __DIR__ . '/..' . '/fzaninotto/faker/src/Faker/Provider/nl_NL/Address.php',
         'Faker\\Provider\\nl_NL\\Color' => __DIR__ . '/..' . '/fzaninotto/faker/src/Faker/Provider/nl_NL/Color.php',
         'Faker\\Provider\\nl_NL\\Company' => __DIR__ . '/..' . '/fzaninotto/faker/src/Faker/Provider/nl_NL/Company.php',
@@ -2928,6 +2935,11 @@ class ComposerStaticInitceb1253358c9ac706807f3177dd509fd
         'Opis\\Closure\\SecurityProvider' => __DIR__ . '/..' . '/opis/closure/src/SecurityProvider.php',
         'Opis\\Closure\\SelfReference' => __DIR__ . '/..' . '/opis/closure/src/SelfReference.php',
         'Opis\\Closure\\SerializableClosure' => __DIR__ . '/..' . '/opis/closure/src/SerializableClosure.php',
+        'PHPMailer\\PHPMailer\\Exception' => __DIR__ . '/..' . '/phpmailer/phpmailer/src/Exception.php',
+        'PHPMailer\\PHPMailer\\OAuth' => __DIR__ . '/..' . '/phpmailer/phpmailer/src/OAuth.php',
+        'PHPMailer\\PHPMailer\\PHPMailer' => __DIR__ . '/..' . '/phpmailer/phpmailer/src/PHPMailer.php',
+        'PHPMailer\\PHPMailer\\POP3' => __DIR__ . '/..' . '/phpmailer/phpmailer/src/POP3.php',
+        'PHPMailer\\PHPMailer\\SMTP' => __DIR__ . '/..' . '/phpmailer/phpmailer/src/SMTP.php',
         'PHPUnit\\Exception' => __DIR__ . '/..' . '/phpunit/phpunit/src/Exception.php',
         'PHPUnit\\Framework\\Assert' => __DIR__ . '/..' . '/phpunit/phpunit/src/Framework/Assert.php',
         'PHPUnit\\Framework\\AssertionFailedError' => __DIR__ . '/..' . '/phpunit/phpunit/src/Framework/Exception/AssertionFailedError.php',
