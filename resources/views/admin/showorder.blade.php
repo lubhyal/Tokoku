@@ -66,6 +66,9 @@
                                 <div class="detail-1">
                                     <h4>{{ $item['item']['name'] }}</h4>
                                 </div>
+                                <div class="detail-2">
+                                    <h4>Serial Key: </h4>
+                                </div>
                                 <div class="detail-3">
                                     <h4>Jumlah: {{ $item['quantity'] }}</h4>
                                 </div>

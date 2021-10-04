@@ -13,7 +13,7 @@
                 <div class="row ">
                     
                     <div class="col-12">
-                        <h5>SHIPPING DETAILS</h5>
+                        <h5>RINCIAN PENGIRIMAN</h5>
                     </div>
 
                     <div class="col-12">
@@ -124,7 +124,7 @@
 
                 </div>
                 
-                <button type="submit" class="button-primary w-100">Beli Sekarang</button>
+                <button type="submit" class="button-primary w-100">Bayar Sekarang</button>
             
             </form>
         </div>

@@ -12,13 +12,13 @@
                 <thead>
                   <tr>
                     <th scope="col">ID</th>
-                    <th scope="col">Name</th>
-                    <th scope="col">Email</th>
-                    <th scope="col">Phone Number</th>
-                    <th scope="col">Country</th>
-                    <th scope="col">City</th>
-                    <th scope="col">Address</th>
-                    <th scope="col">Zipcode</th>
+                    <th scope="col">Nama</th>
+                    <th scope="col">Alamat Email</th>
+                    <th scope="col">Nomor Telepon</th>
+                    <th scope="col">Negara</th>
+                    <th scope="col">Kota</th>
+                    <th scope="col">Almat</th>
+                    <th scope="col">Kode pos</th>
                   </tr>
                 </thead>
                 <tbody>

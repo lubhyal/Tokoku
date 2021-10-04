@@ -20,7 +20,7 @@
                                 </div>
                                 <div class="item-detail mr-auto d-flex flex-column justify-content-center">
                                     <div class="info-2"><h5>{{ $product['item']['name'] }}</h5> </div>
-                                    <div class="info-4"><h6>Quantity: {{ $product['quantity'] }}</h6></div>
+                                    <div class="info-4"><h6>Jumlah: {{ $product['quantity'] }}</h6></div>
                                     <div class="info-5">
                                         <a href="{{ route('cart.remove',['id'=>key($products)]) }}" class="remove-cart">
                                             <i class="fa fa-trash"></i> 
@@ -28,7 +28,7 @@
                                     </div>
                                 </div>
 
-                                <div class="item-quantity">Rp. {{ $product['price'] }}</div>
+                                <div class="item-quantity">Rp. {{ format_uang($product['price']) }}</div>
                             </div>
                         @endforeach
                     </div>
@@ -41,11 +41,11 @@
                         <div class="card-body">
                             <div class="cart-checkout">
                                 <div class="info-1">
-                                    SUMMARY
+                                    RINGKASAN
                                 </div>
                                 <hr>
                                 <div class="info-2">
-                                    TOTAL: Rp. {{ $totalPrice }}
+                                    TOTAL: Rp. {{ format_uang($totalPrice) }}
                                 </div>
                                 <div class="info-3 pt-3">
                                     <a href="{{ route('checkout.index') }}"><button class="button-primary w-100">CHECKOUT</button></a>
