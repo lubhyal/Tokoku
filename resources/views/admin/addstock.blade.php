@@ -39,7 +39,7 @@
 
         </div>
         
-        <button type="submit" class="btn btn-success w-100">TAMBAHKAN STOK</button>
+        <button type="submit" class="btn btn-success w-100 animation-on-hover">TAMBAHKAN STOK</button>
     
     </form>
 
