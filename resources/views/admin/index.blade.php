@@ -2,7 +2,15 @@
 
 @section ('content')
 
+
 <div class="col-12 col-md-12 col-sm-12 col-lg-10">
+    <nav aria-label="breadcrumb" role="navigation" >
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item" data="green"><a href="#">Index</a></li>
+          <li class="breadcrumb-item" data="green"><a href="{{ route('admin.index') }}">Admin</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Dashboard</li>
+        </ol>
+      </nav>
     @if(Session::has('success'))
     <div class="row">
       <div class="col-12">
@@ -12,35 +20,36 @@
       </div>
     </div>
     @endif
+
     <div class="row">
         <div class="col-4 totaluser">
-            <div class="card">
+            <div class="card card-chart">
                 <div class="card-header">
-                    <i class="fa fa-user"> PENGGUNA</i>
+                    <h5 class="card-category ">TOTAL PENGGUNA</h5>
                 </div>
                 <div class="card-body">
-                    <h5>{{ $totaluser }}</h5>
+                    <h3 class="card-title"><i class="tim-icons icon-single-02 text-success"></i>  {{ $totaluser }}</h3>
                 </div>
             </div>
         </div>
         <div class="col-4 totalorder">
-            <div class="card">
+            <div class="card card-chart">
                 <div class="card-header">
-                    <i class="fa fa-dropbox"> PESANAN</i> 
+                    <h5 class="card-category ">TOTAL PESANAN</h5>
                 </div>
                 <div class="card-body">
-                    <h5>{{ $totalorder }} </h5>
+                    <h3 class="card-title"><i class="tim-icons icon-bag-16 text-success"></i>  {{ $totalorder }}</h3>
                 </div>
             </div>
         </div>
         <div class="col-4 totalgross">
-            <div class="card">
+            
+            <div class="card card-chart">
                 <div class="card-header">
-                    <i class="fa fa-money"> PENGHASILAN</i>
+                    <h5 class="card-category ">TOTAL PENGHASILAN</h5>
                 </div>
                 <div class="card-body">
-                    
-                    <h5>Rp {{ format_uang($totalgross) }}</h5>
+                    <h3 class="card-title"><i class="tim-icons icon-wallet-43 text-success"></i>  Rp {{ format_uang($totalgross) }}</h3>
                 </div>
             </div>
         </div>
@@ -50,10 +59,10 @@
                     PESANAN TERBARU
                 </div>
                 <div class="card-body">
-                    <ul class="list-group">
+                    <div class="form-group">
                         @foreach ($latest as $order)
-                        <a href="{{ route('admin.showorder',['id'=>$order->id]) }}" class="list-group-item latest-order">
-                            <div class="row">
+                        <a href="{{ route('admin.showorder',['id'=>$order->id]) }}" class="latest-order">
+                            <div>
                                 <div class="col-12 d-flex">
                                     <div class="id" style="width:150px">Order ID: {{ $order->id }}</div>
                                     <div class="name">Nama Pelanggan : {{ $order->name }}</div>
@@ -62,7 +71,7 @@
                             </div>
                         </a>
                         @endforeach
-                    </ul>
+                    </div>
                 </div>
             </div>
         </div>
@@ -75,8 +84,8 @@
                     <form method="POST" action="{{ route('admin.reminder') }}" enctype="multipart/form-data">
                         @method('PATCH')
                         @csrf
-                        <textarea name="reminder" id="" cols="27" rows="10">{{ $reminder->reminder ?? ''}}</textarea>
-                        <button type="submit" class="button-primary w-100">Perbarui</button>
+                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3">{{ $reminder->reminder ?? ''}}</textarea><BR>
+                        <button type="submit" class="btn btn-default animation-on-hover w-100">Perbarui</button>
                     </form>
                 </div>
             </div>

@@ -15,19 +15,20 @@
 
     <!-- Styles -->
     <link rel="icon" href="{{ URL::asset('photo/Logos.png') }}" type="image/x-icon"/>
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link href="{{ asset('external-css/style.css') }}" rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,600,700,800" rel="stylesheet">
+    <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+    <link href="{{ asset('black/css/nucleo-icons.css') }}" rel="stylesheet" />
+        <!-- CSS -->
+        <link href="{{ asset('black/css/black-dashboard.css?v=1.0.0') }}" rel="stylesheet" />
+        <link href="{{ asset('black/css/theme.css') }}" rel="stylesheet" />
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">   
+        <nav class="navbar navbar-expand-lg  navbar-transparent">   
             <div class="container">
                 <a class="navbar-brand" href="{{ route('admin.index') }}">
                     <div class="d-flex">
-                        <div><img src="{{ asset('photo/box.svg') }}" style="height:50px;" alt=""></div>
+                        <div><img src="{{ asset('photo/Logos.png') }}" style="height:40px;" alt=""></div>
                         <div class="pl-3 ml-3 pt-2" style="border-left:1px solid rgba(0, 0, 0, 0.5); font-size:1.5rem;">{{ config('app.name', 'Laravel') }}</div>
                     </div>
                 </a>
@@ -73,33 +74,52 @@
                 </div>
             </div>
         </nav>
+        
+        
 
 
         <main class="py-4">
             <div class="container">
                 <div class="row mx-auto">
                     <div class="col-12 col-md-12 col-lg-2 col-md-2 col-sm-12 pb-2">
-                        <div class="card">
-                            <div class="card-header">
-                                NAVIGASI
-                            </div>
-                            <ul class="list-group">
-                                <a href="{{ route('admin.index') }}" class="list-group-item admin-navigation">
-                                    Dashboard
-                                </a>
-                                <a href="{{ route('admin.user') }}" class="list-group-item admin-navigation">
-                                        Pengguna
-                                </a>
-                                <a href="{{ route('admin.product') }}" class="list-group-item admin-navigation">
-                                        Produk
-                                </a>
-                                <a href="{{ route('admin.stock') }}" class="list-group-item admin-navigation">
-                                        Stok
-                                </a>
-                                <a href="{{ route('admin.order') }}" class="list-group-item admin-navigation">
-                                        Pesanan
-                                </a>
+                        <div class="sidebar"data="green">
+                            <div class="">
+                                <div class="logo">
+                                    <center><h4><a href="#" class="simple-text logo-big">Navigasi Admin</a></center>
+                                </div>
+                            <ul class="nav">
+                                <li>
+                                    <a href="{{ route('admin.index') }}">
+                                        <i class="tim-icons icon-chart-pie-36"></i>
+                                        <p>Dashboard</p>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="{{ route('admin.user') }}">
+                                        <i class="tim-icons icon-single-02"></i>
+                                        <p>Pengguna</p>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="{{ route('admin.product') }}">
+                                        <i class="tim-icons icon-app"></i>
+                                        <p>Produk</p>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="{{ route('admin.stock') }}">
+                                        <i class="tim-icons icon-basket-simple"></i>
+                                        <p>Stok Produk</p>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="{{ route('admin.order') }}">
+                                        <i class="tim-icons icon-bag-16"></i>
+                                        <p>Pesanan</p>
+                                    </a>
+                                </li>
                             </ul>
+                        </div>
                         </div>
                         
                     </div>

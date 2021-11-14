@@ -3,6 +3,13 @@
 @section ('content')
 
 <div class="col-12 col-md-12 col-sm-12 col-lg-10">
+  <nav aria-label="breadcrumb" role="navigation" >
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item" data="green"><a href="#">Index</a></li>
+      <li class="breadcrumb-item" data="green"><a href="{{ route('admin.index') }}">Admin</a></li>
+      <li class="breadcrumb-item active" aria-current="page">Produk</li>
+    </ol>
+  </nav>
   @if(Session::has('success'))
   <div class="row">
     <div class="col-12">
@@ -13,11 +20,10 @@
   </div>
   @endif
     <div class="card">
-        <div class="card-header">
-            <h5>Daftar Produk</h5>
-        </div>
+        
         <div class="card-body">
-            <a href="{{ route('admin.addform') }}" class="btn btn-success mb-4" style="color:white; width:150px;">Tambah Produk</a>
+          <h3>Daftar Produk</h3>
+            <a href="{{ route('admin.addform') }}" class="btn btn-success w-100" style="color:white; width:150px;">Tambah Produk</a>
             <table class="table table-striped">
                 <thead>
                   <tr>
@@ -38,8 +44,8 @@
                     <td>Rp.{{ format_uang($product->price) }}</td>
                     <td>{{ $product->desc }}</td>
                     <td>
-                        <a href="{{ route('product.editform',['id'=>$product->id]) }}" class="btn btn-primary w-100 m-1" style="color:white;">EDIT</a>
-                        <a href="{{ route('product.remove',['id'=>$product->id]) }}" class="btn btn-danger w-100 m-1" style="color:white;">HAPUS</a>
+                        <a href="{{ route('product.editform',['id'=>$product->id]) }}" class="btn btn-primary w-100 m-1 animation-on-hover" style="color:white;">EDIT</a>
+                        <a href="{{ route('product.remove',['id'=>$product->id]) }}" class="btn btn-danger w-100 m-1 animation-on-hover" style="color:white;">HAPUS</a>
                     </td>
                   </tr>
                 @endforeach

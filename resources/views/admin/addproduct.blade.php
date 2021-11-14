@@ -3,7 +3,15 @@
 @section ('content')
 
 <div class="col-12 col-md-12 col-sm-12 col-lg-10">
-    <h5>TAMBAH PRODUK</h5>
+    <nav aria-label="breadcrumb" role="navigation" >
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item" data="green"><a href="#">Index</a></li>
+          <li class="breadcrumb-item" data="green"><a href="{{ route('admin.index') }}">Admin</a></li>
+          <li class="breadcrumb-item" data="green"><a href="{{ route('admin.product') }}">Produk</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Tambah Produk</li>
+        </ol>
+      </nav>
+    <h3>TAMBAH PRODUK</h3>
     <hr>
 
     <form method="POST" action="{{ route('product.create') }}" enctype="multipart/form-data">
@@ -68,7 +76,7 @@
 
         </div>
         
-        <button type="submit" class="btn btn-success w-100">TAMBAH PRODUK</button>
+        <button type="submit" class="btn btn-warning w-100 animation-on-hover">TAMBAH PRODUK</button>
     
     </form>
 

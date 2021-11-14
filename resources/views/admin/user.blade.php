@@ -3,9 +3,16 @@
 @section ('content')
 
 <div class="col-12 col-md-12 col-sm-12 col-lg-10">
+  <nav aria-label="breadcrumb" role="navigation" >
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item" data="green"><a href="#">Index</a></li>
+      <li class="breadcrumb-item" data="green"><a href="{{ route('admin.index') }}">Admin</a></li>
+      <li class="breadcrumb-item active" aria-current="page">Pengguna</li>
+    </ol>
+  </nav>
     <div class="card">
         <div class="card-header">
-            <h5>DAFTAR PENGGUNA</B></h5>
+            <h3>DAFTAR PENGGUNA</B></h3>
         </div>
         <div class="card-body">
             <table class="table table-striped">
