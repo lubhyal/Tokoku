@@ -3,12 +3,20 @@
 @section ('content')
 
 <div class="col-12 col-md-12 col-sm-12 col-lg-10">
+    <nav aria-label="breadcrumb" role="navigation" >
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item" data="green"><a href="#">Index</a></li>
+          <li class="breadcrumb-item" data="green"><a href="{{ route('admin.index') }}">Admin</a></li>
+          <li class="breadcrumb-item" data="green"><a href="{{ route('admin.order') }}">Pesanan</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Tampilkan Pesanan</li>
+        </ol>
+      </nav>
     <div class="card">
         <div class="card-header">
             <div class="row">
             @foreach ($ids as $id)
             <div class="col-12 col-lg-6 col-md-6 col-sm-12 pt-2">
-                <h5>DETAIL PESANAN</h5>
+                <h3>DETAIL PESANAN</h3>
                 <hr>
                 <div class="row">
                     <div class="col-5">
@@ -33,7 +41,7 @@
             
 
             <div class="col-12 col-lg-6 col-md-6 col-sm-12 pt-2">
-                <h5>PENGIRIMAN</h5>
+                <h3>PENGIRIMAN</h3>
                 @if(Session::has('status'))
                     <div class="alert alert-success">{{ Session::get('status') }}</div>
                 @endif
@@ -51,7 +59,7 @@
                     </div>
                     <div class="form-group">
                         <label for="message">Isi Pesan </label>
-                        <textarea class="form-control" name="message" id="" cols="30" rows="4"> Hai {{ $id->name }}, Terima Kasih Telah berbelanja di TOKOKU.com,
+                        <textarea class="form-control" name="message" id="exampleFormControlTextarea1" cols="30" rows="4"> Hai {{ $id->name }}, Terima Kasih Telah berbelanja di TOKOKU.com,
     Mohon simpan dengan baik Produk key berikut ini.
     @foreach($order as $order)
             <div class="col-sm-12 col-md-12 col-lg-12 d-flex order-history mx-auto">
@@ -90,7 +98,7 @@
     </textarea>
                     </div>
                     <div class="form-group">
-                        <button type="submit" class="btn btn-success col-sm-5"><i class="fa fa-send"></i>&nbsp;KIRIM EMAIL</button>
+                        <button type="submit" class="btn btn-success col-sm-5 animation-on-hover"><i class="tim-icons icon-send"></i>&nbsp;KIRIM EMAIL</button>
                     </div>
                 <form>   
                 </div>

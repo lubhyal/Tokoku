@@ -3,8 +3,16 @@
 @section ('content')
 
 <div class="col-12 col-md-12 col-sm-12 col-lg-10">
+    <nav aria-label="breadcrumb" role="navigation" >
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item" data="green"><a href="#">Index</a></li>
+          <li class="breadcrumb-item" data="green"><a href="{{ route('admin.index') }}">Admin</a></li>
+          <li class="breadcrumb-item" data="green"><a href="{{ route('admin.stock') }}">Stok Produk</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Tambah Stok</li>
+        </ol>
+      </nav>
 
-    <h5>TAMBAH STOK</h5>
+    <h3>TAMBAH STOK</h3>
     <hr>
 
     <form method="POST" action="{{ route('admin.addstock')}}" enctype="multipart/form-data">
@@ -14,10 +22,10 @@
             <div class="col-12">
                 <label for="product" class="">{{ __('Produk') }}</label>
                 <div class="form-group">
-                    <select name="product" id="addproductstock" class="form-control">
+                    <select name="product" id="addproductstock" class="form-control " >
                         <option selected="true" value="" disabled hidden>Pilih Produk</option>
                         @foreach ($products as $product)
-                            <option value="{{ $product->id }}">{{ $product->id.' - '.$product->name }}</option>
+                            <option value="{{ $product->id }}" class="dropdown-item">{{ $product->id.' - '.$product->name }}</option>
                         @endforeach
                     </select>
                 </div>
